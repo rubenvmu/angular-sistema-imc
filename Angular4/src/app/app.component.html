@@ -1,0 +1,46 @@
+<header></header>
+
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-5">
+        <label for="nombre"><b>Nombre</b></label><br>
+        <input class="form-control" type="text" id="nombre" name="nombre" formControlName="nombre" maxlength="12" pattern="{1,12}" required>
+
+        <label for="peso"><b>Peso</b></label><br>
+        <input class="form-control" type="number" id="peso" name="peso" formControlName="peso" step="0.01" required>
+
+        <label for="altura"><b>Altura</b></label><br>
+        <input class="form-control" type="number" id="altura" name="altura" formControlName="altura" step="0.01" min="0" required>
+
+      </div>
+      <div class="col-md-3">
+        <label for="sistema">Sistema </label><br>
+        <select class="form-select" size="2" id="sistema" name="sistema" formControlName="sistema">
+          <option value="metrico">Métrico</option>
+          <option value="ingles">Inglés</option>
+        </select>
+
+        <div id="espacio2"></div>
+
+        <button class="btn btn-success" type="submit">Calcular IMC</button>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+
+  <div id="espacio1"></div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-7">
+        <input type="text" id="solucion" name="solucion" formControlName="solucion" readonly>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+  </div>
+
+</form>
